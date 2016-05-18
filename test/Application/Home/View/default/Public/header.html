@@ -1,0 +1,40 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li <?php if($cell=='index'){echo 'class="active"';}?> ><a href="<{:U('Index/index')}>">首页 <span class="sr-only">(current)</span></a></li>
+        
+        <li <?php if($cell=='product'){echo 'class="active"';}?>><a href="<{:U('Product/index')}>">产品列表</a></li>
+        <li <?php if($cell=='member'){echo 'class="active"';}?>><a href="<{:U('Member/index')}>">个人中心</a></li>
+        <li <?php if($cell=='news'){echo 'class="active"';}?>><a href="<{:U('News/index')}>">资讯中心</a></li>
+        <li <?php if($cell=='help'){echo 'class="active"';}?>><a href="<{:U('Help/index')}>">帮助中心</a></li>
+        <li <?php if($cell=='tickling'){echo 'class="active"';}?>><a href="<{:U('Tickling/index')}>">产品反馈</a></li>                
+      </ul>
+      <empty name="mid">
+        <form class="navbar-form navbar-right" role="search">
+          <a type="submit" class="btn btn-success" href="__MODULE__/public/login.html">登录</a>
+          <a type="submit" class="btn btn-info" href="__MODULE__/public/regeister.html">注册</a>
+        </form>
+      <else />
+        <form class="navbar-form navbar-right" role="search">
+          你好：<a type="submit"  href="__MODULE__"><{$name}></a>
+          <a type="submit" class="btn btn-info" href="__MODULE__/public/logout.html">退出</a>
+        </form>
+      </empty>
+      
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
